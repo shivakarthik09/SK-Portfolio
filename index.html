@@ -69,6 +69,33 @@ body {
       font-size: 18px;
     }
   }
+/* Fix height issues for mobile */
+.js-fullheight {
+  height: auto;
+  min-height: 500px; /* Ensures it's not too small */
+}
+
+@media (min-width: 768px) {
+  .js-fullheight {
+    height: 100vh; /* Full height on larger screens */
+  }
+}
+
+/* Ensure owl-carousel slides adjust height */
+.home-slider .owl-stage-outer,
+.home-slider .owl-stage,
+.slider-item {
+  height: auto !important;
+  min-height: 500px;
+}
+
+/* Allow vertical scrolling */
+html, body {
+  overflow-x: hidden; /* Prevents horizontal scroll */
+  overflow-y: auto;   /* Ensures vertical scrolling works */
+  height: auto;
+}
+
 
 </style>
 
