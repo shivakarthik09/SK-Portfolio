@@ -37,16 +37,6 @@ body {
     height: auto;
   }
 
-  #typing-animation {
-    font-size: 4vw;
-    font-weight: bold;
-    color: white;
-    border-right: 3px solid white;
-    white-space: nowrap;
-    overflow: hidden;
-    animation: typing 3s steps(20, end) infinite, blink 0.7s step-end infinite;
-  }
-
   @keyframes typing {
     from { width: 0; }
     to { width: 100%; }
@@ -69,58 +59,7 @@ body {
       font-size: 18px;
     }
   }
- /* Make sure body and html allow scrolling */
-html, body {
-  overflow-x: hidden;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-}
 
-/* Ensure sections like home slider fill height */
-.hero, .home-slider, .slider-item, .js-fullheight {
-  position: relative;
-  width: 100%;
-  min-height: 100vh; /* Full height view */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Owl Carousel Fix - Ensures it has height */
-.home-slider .owl-stage-outer {
-  height: auto !important;
-}
-.home-slider .owl-stage {
-  display: flex; /* Ensures items fill height */
-}
-.home-slider .slider-item {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh; /* Full height */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-/* Text & content within slider */
-.slider-text {
-  z-index: 2;
-  position: relative;
-  text-align: left;
-}
-
-/* Overlay (Ensure it doesn't block text) */
-.slider-item .overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.4); /* Adjust transparency */
-  z-index: 1;
-}
 
 /* Images / Background Safety */
 img {
@@ -714,20 +653,7 @@ Key Skills: Apache Spark · AWS EC2 · Docker · S3 · Java · Distributed Compu
   <script src="js/scrollax.min.js"></script>
 
   <script src="js/main.js"></script>
-  <script>
-  $(document).ready(function() {
-    $('.home-slider').owlCarousel({
-      items: 1,                // Show one slide at a time
-      loop: true,              // Infinite looping
-      autoplay: true,          // Automatic sliding
-      autoplayTimeout: 4000,   // Slide every 4 seconds
-      smartSpeed: 1000,        // Smooth speed transition
-      animateOut: 'fadeOut',   // Optional: Smooth fade transition
-      nav: false,              // Hide navigation arrows (optional)
-      dots: true               // Show dots (optional)
-    });
-  });
-</script>
+ 
 
   </body>
 </html>
