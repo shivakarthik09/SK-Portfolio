@@ -186,7 +186,7 @@ img {
 						const typingTexts = [
 						'Data Analyst  ',
 						'Data Scientist  ',
-						'ML Engineer  ',
+						'ML engineer  ',
 						'Researcher  ',
 						];
 
@@ -749,6 +749,20 @@ Key Skills: Apache Spark · AWS EC2 · Docker · S3 · Java · Distributed Compu
   <script src="js/scrollax.min.js"></script>
 
   <script src="js/main.js"></script>
+  <script>
+  $(document).ready(function() {
+    $('.home-slider').owlCarousel({
+      items: 1,                // Show one slide at a time
+      loop: true,              // Infinite looping
+      autoplay: true,          // Automatic sliding
+      autoplayTimeout: 4000,   // Slide every 4 seconds
+      smartSpeed: 1000,        // Smooth speed transition
+      animateOut: 'fadeOut',   // Optional: Smooth fade transition
+      nav: false,              // Hide navigation arrows (optional)
+      dots: true               // Show dots (optional)
+    });
+  });
+</script>
 
   </body>
 </html>
