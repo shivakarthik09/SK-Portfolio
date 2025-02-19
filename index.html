@@ -3,7 +3,7 @@
   <head>
     <title>Shiva Karthik Pinjarle Manmohan Portfolio</title>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
 
@@ -26,89 +26,49 @@
 
 <style>
 
-/*======================================
-//--//-->   ABOUT
-======================================*/
-
-.about-mf .box-shadow-full {
-  padding-top: 4rem;
-  padding-bottom: 4rem;
-}
-
-.about-mf .about-img {
-  margin-bottom: 2rem;
-}
-
-.about-mf .about-img img {
-  margin-left: 10px;
-}
-
-
-.skill-mf .progress {
-  /* background-color: #cde1f8; */
-  margin: .5rem 0 1.2rem 0;
-  border-radius: 0;
-  height: .7rem;
-}
-
-.skill-mf .progress .progress-bar {
-  height: .7rem;
-  background-color: #ffbd39;
-}
-
-
-/* Animation styles */
-#typing-animation {
-  position: relative;
-  font-size: 30px;
-  font-weight: bold;
-  color: rgb(255, 255, 255);
-  overflow: hidden;
-  white-space: nowrap;
-  animation: typing 3s steps(20, end) infinite;
-}
-
-#typing-animation:before {
-  content: "";
-  /* position: absolute; */
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 100%;
-  background-color: #ccc;
-  animation: typing-cursor 0.5s ease-in-out infinite;
-}
-
-@keyframes typing {
-  from {
-    width: 0;
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
   }
-  to {
-    width: 100%;
+
+  img {
+    max-width: 100%;
+    height: auto;
   }
-}
 
-@keyframes typing-cursor {
-  from {
-    width: 5px;
+  #typing-animation {
+    font-size: 4vw;
+    font-weight: bold;
+    color: white;
+    border-right: 3px solid white;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 3s steps(20, end) infinite, blink 0.7s step-end infinite;
   }
-  to {
-    width: 0;
+
+  @keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
   }
-}
 
+  @keyframes blink {
+    50% { border-color: transparent; }
+  }
 
-/* project image zoom effect */
+  .zoom-effect {
+    transition: transform 0.3s ease-out;
+  }
 
-.zoom-effect {
-  overflow: hidden;
-  transition: transform 0.3s ease-out;
-}
+  .zoom-effect:hover {
+    transform: scale(1.1);
+  }
 
-.zoom-effect:hover {
-  transform: scale(1.1);
-}
-
+  @media (max-width: 600px) {
+    #typing-animation {
+      font-size: 18px;
+    }
+  }
 
 </style>
 
@@ -161,7 +121,7 @@
 						const typingTexts = [
 						'Data Analyst  ',
 						'Data Scientist  ',
-						'ML engineer  ',
+						'ML Engineer  ',
             'Researcher  ',
 						];
 
