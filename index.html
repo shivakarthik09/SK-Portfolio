@@ -69,34 +69,55 @@ body {
       font-size: 18px;
     }
   }
-/* Fix height issues for mobile */
+ /* Make sure the body and html don't overflow horizontally */
+html, body {
+  overflow-x: hidden;
+  overflow-y: auto;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Ensure the container and slider sections fit properly */
+.container, .home-slider, .slider-item {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Fix the js-fullheight and owl-carousel issues */
 .js-fullheight {
+  min-height: 500px;
   height: auto;
-  min-height: 500px; /* Ensures it's not too small */
 }
 
 @media (min-width: 768px) {
   .js-fullheight {
-    height: 100vh; /* Full height on larger screens */
+    height: 100vh;
   }
 }
 
-/* Ensure owl-carousel slides adjust height */
+/* Ensure the owl-carousel doesn't cause horizontal scroll */
 .home-slider .owl-stage-outer,
 .home-slider .owl-stage,
-.slider-item {
+.home-slider .slider-item {
+  width: 100%;
+  max-width: 100%;
   height: auto !important;
-  min-height: 500px;
+  overflow: hidden;
 }
 
-/* Allow vertical scrolling */
-html, body {
-  overflow-x: hidden; /* Prevents horizontal scroll */
-  overflow-y: auto;   /* Ensures vertical scrolling works */
+/* Handle images being too large */
+img {
+  max-width: 100%;
   height: auto;
 }
 
-
+/* Optional: Debugging tool if you want to see any overflowing elements */
+* {
+  box-sizing: border-box;
+}
 </style>
 
 
@@ -148,7 +169,7 @@ html, body {
 						const typingTexts = [
 						'Data Analyst  ',
 						'Data Scientist  ',
-						'ML Engineer  ',
+						'ML engineer  ',
 						'Researcher  ',
 						];
 
