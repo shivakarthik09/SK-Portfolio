@@ -3,7 +3,7 @@
   <head>
     <title>Shiva Karthik Pinjarle Manmohan Portfolio</title>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
 
@@ -26,98 +26,90 @@
 
 <style>
 
-body {
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0;
-  }
+/*======================================
+//--//-->   ABOUT
+======================================*/
 
-  img {
-    max-width: 100%;
-    height: auto;
-  }
-
-  #typing-animation {
-    font-size: 4vw;
-    font-weight: bold;
-    color: white;
-    border-right: 3px solid white;
-    white-space: nowrap;
-    overflow: hidden;
-    animation: typing 3s steps(20, end) infinite, blink 0.7s step-end infinite;
-  }
-
-  @keyframes typing {
-    from { width: 0; }
-    to { width: 100%; }
-  }
-
-  @keyframes blink {
-    50% { border-color: transparent; }
-  }
-
-  .zoom-effect {
-    transition: transform 0.3s ease-out;
-  }
-
-  .zoom-effect:hover {
-    transform: scale(1.1);
-  }
-
-  @media (max-width: 600px) {
-    #typing-animation {
-      font-size: 18px;
-    }
-  }
- /* Make sure the body and html don't overflow horizontally */
-html, body {
-  overflow-x: hidden;
-  overflow-y: auto;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  max-width: 100%;
+.about-mf .box-shadow-full {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
 }
 
-/* Ensure the container and slider sections fit properly */
-.container, .home-slider, .slider-item {
-  width: 100%;
-  max-width: 100%;
-  box-sizing: border-box;
+.about-mf .about-img {
+  margin-bottom: 2rem;
 }
 
-/* Fix the js-fullheight and owl-carousel issues */
-.js-fullheight {
-  min-height: 500px;
-  height: auto;
+.about-mf .about-img img {
+  margin-left: 10px;
 }
 
-@media (min-width: 768px) {
-  .js-fullheight {
-    height: 100vh;
-  }
+
+.skill-mf .progress {
+  /* background-color: #cde1f8; */
+  margin: .5rem 0 1.2rem 0;
+  border-radius: 0;
+  height: .7rem;
 }
 
-/* Ensure the owl-carousel doesn't cause horizontal scroll */
-.home-slider .owl-stage-outer,
-.home-slider .owl-stage,
-.home-slider .slider-item {
-  width: 100%;
-  max-width: 100%;
-  height: auto !important;
+.skill-mf .progress .progress-bar {
+  height: .7rem;
+  background-color: #ffbd39;
+}
+
+
+/* Animation styles */
+#typing-animation {
+  position: relative;
+  font-size: 30px;
+  font-weight: bold;
+  color: rgb(255, 255, 255);
   overflow: hidden;
+  white-space: nowrap;
+  animation: typing 3s steps(20, end) infinite;
 }
 
-/* Handle images being too large */
-img {
-  max-width: 100%;
-  height: auto;
+#typing-animation:before {
+  content: "";
+  /* position: absolute; */
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: #ccc;
+  animation: typing-cursor 0.5s ease-in-out infinite;
 }
 
-/* Optional: Debugging tool if you want to see any overflowing elements */
-* {
-  box-sizing: border-box;
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
 }
+
+@keyframes typing-cursor {
+  from {
+    width: 5px;
+  }
+  to {
+    width: 0;
+  }
+}
+
+
+/* project image zoom effect */
+
+.zoom-effect {
+  overflow: hidden;
+  transition: transform 0.3s ease-out;
+}
+
+.zoom-effect:hover {
+  transform: scale(1.1);
+}
+
+
 </style>
 
 
@@ -149,7 +141,7 @@ img {
 	      	<div class="overlay"></div>
 	         <div class="container">
 	          <div class="row d-md-flex no-gutters slider-text align-items-end justify-content-end" data-scrollax-parent="true">
-	          	<div class="one-third order-md-last img" style="background-image:url(); min-height: 300px;">
+	          	<div class="one-third js-fullheight order-md-last img" style="background-image:url();">
 	          	 <div class="overlay"></div>
 	          	</div>
 		          <div class="one-forth d-flex  align-items-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
@@ -170,7 +162,7 @@ img {
 						'Data Analyst  ',
 						'Data Scientist  ',
 						'ML engineer  ',
-						'Researcher  ',
+            'Researcher  ',
 						];
 
 						// Create a function to display the typing animation for a given text
