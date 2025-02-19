@@ -69,53 +69,70 @@ body {
       font-size: 18px;
     }
   }
- /* Make sure the body and html don't overflow horizontally */
+ /* Make sure body and html allow scrolling */
 html, body {
   overflow-x: hidden;
-  overflow-y: auto;
   margin: 0;
   padding: 0;
   width: 100%;
-  max-width: 100%;
 }
 
-/* Ensure the container and slider sections fit properly */
-.container, .home-slider, .slider-item {
+/* Ensure sections like home slider fill height */
+.hero, .home-slider, .slider-item, .js-fullheight {
+  position: relative;
   width: 100%;
-  max-width: 100%;
-  box-sizing: border-box;
+  min-height: 100vh; /* Full height view */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Fix the js-fullheight and owl-carousel issues */
-.js-fullheight {
-  min-height: 500px;
-  height: auto;
-}
-
-@media (min-width: 768px) {
-  .js-fullheight {
-    height: 100vh;
-  }
-}
-
-/* Ensure the owl-carousel doesn't cause horizontal scroll */
-.home-slider .owl-stage-outer,
-.home-slider .owl-stage,
-.home-slider .slider-item {
-  width: 100%;
-  max-width: 100%;
+/* Owl Carousel Fix - Ensures it has height */
+.home-slider .owl-stage-outer {
   height: auto !important;
-  overflow: hidden;
+}
+.home-slider .owl-stage {
+  display: flex; /* Ensures items fill height */
+}
+.home-slider .slider-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh; /* Full height */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-/* Handle images being too large */
+/* Text & content within slider */
+.slider-text {
+  z-index: 2;
+  position: relative;
+  text-align: left;
+}
+
+/* Overlay (Ensure it doesn't block text) */
+.slider-item .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4); /* Adjust transparency */
+  z-index: 1;
+}
+
+/* Images / Background Safety */
 img {
   max-width: 100%;
   height: auto;
 }
 
-/* Optional: Debugging tool if you want to see any overflowing elements */
-* {
+.container {
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 15px;
+  margin: auto;
   box-sizing: border-box;
 }
 </style>
@@ -169,7 +186,7 @@ img {
 						const typingTexts = [
 						'Data Analyst  ',
 						'Data Scientist  ',
-						'ML engineer  ',
+						'ML Engineer  ',
 						'Researcher  ',
 						];
 
